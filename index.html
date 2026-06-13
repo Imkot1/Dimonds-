@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Уютный ресторан | Вкус и атмосфера</title>
+    <title>Gusto & Co | Ресторан авторской кухни</title>
     <style>
         * {
             margin: 0;
@@ -18,14 +18,12 @@
             background-color: #fefaf5;
         }
 
-        /* Контейнер */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Шапка */
         .header {
             background: #fffaf5;
             box-shadow: 0 2px 15px rgba(0,0,0,0.03);
@@ -72,7 +70,6 @@
             color: #c26e2e;
         }
 
-        /* Секция Hero */
         .hero {
             background: linear-gradient(120deg, #fceae6, #fff2e9);
             padding: 4rem 0;
@@ -113,7 +110,6 @@
             box-shadow: 0 8px 20px rgba(194,110,46,0.2);
         }
 
-        /* Карточки меню */
         .section-title {
             font-size: 2rem;
             text-align: center;
@@ -166,7 +162,6 @@
             font-size: 1.2rem;
         }
 
-        /* Контактная форма */
         .contact {
             background: #fff3ea;
             border-radius: 40px;
@@ -203,13 +198,17 @@
             font-weight: 500;
         }
 
-        /* Футер */
         .footer {
             text-align: center;
             padding: 2rem 0;
             border-top: 1px solid #eee3d8;
             margin-top: 2rem;
             color: #7f6a58;
+        }
+
+        .full-menu-btn {
+            text-align: center;
+            margin: 2rem 0;
         }
 
         @media (max-width: 700px) {
@@ -232,8 +231,8 @@
         <nav class="navbar">
             <div class="logo">🍽️ Gusto & Co</div>
             <ul class="nav-links">
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#menu">Меню</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="menu.html">Меню</a></li>
                 <li><a href="#contact">Бронь</a></li>
             </ul>
         </nav>
@@ -260,7 +259,7 @@
         </div>
     </div>
 
-    <div class="container" id="menu">
+    <div class="container">
         <h2 class="section-title">🍜 Попробуйте наши хиты</h2>
         <div class="cards">
             <div class="card">
@@ -287,6 +286,9 @@
                     <div class="price">520 ₽</div>
                 </div>
             </div>
+        </div>
+        <div class="full-menu-btn">
+            <a href="menu.html" class="btn">Смотреть полное меню →</a>
         </div>
     </div>
 
@@ -317,7 +319,7 @@
                 <button type="submit" class="btn" id="submitBtn">Отправить бронь</button>
                 <div id="formStatus" class="form-message"></div>
             </form>
-            <p style="margin-top: 1rem; font-size: 0.85rem; color: #a07e62;">*Это демо-форма. В реальном проекте подключите Formspree, Google Forms или любой другой сервис для приёма заявок.</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #a07e62;">*Это демо-форма. В реальном проекте подключите Formspree или Google Forms.</p>
         </div>
     </div>
 </main>
@@ -329,21 +331,13 @@
 </footer>
 
 <script>
-    // Простой обработчик формы без отправки на сервер (учебный пример)
     const form = document.getElementById('demoForm');
     const statusDiv = document.getElementById('formStatus');
 
     form.addEventListener('submit', function(e) {
-        e.preventDefault(); // не перезагружаем страницу
-        
-        // Простейшая "имитация отправки"
+        e.preventDefault();
         statusDiv.style.color = '#2b6e3c';
         statusDiv.innerHTML = '✅ Спасибо! Наш администратор свяжется с вами для подтверждения брони.';
-        
-        // Очистить форму опционально
-        // form.reset();
-        
-        // Можно также добавить скрытие сообщения через 5 секунд
         setTimeout(() => {
             statusDiv.innerHTML = '';
         }, 5000);
