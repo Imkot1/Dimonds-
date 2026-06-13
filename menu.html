@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню | Gusto & Co</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #2c241a;
+            background-color: #fefaf5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: #fffaf5;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(8px);
+            background: rgba(255,250,245,0.9);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c26e2e, #a0522d);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3b2c21;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #c26e2e;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: #3b2c21;
+            border-bottom: 2px dashed #e2d4c8;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-head {
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            flex: 1 1 280px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            background-color: #e9dfd3;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            color: #c26e2e;
+            font-weight: 700;
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #eee3d8;
+            margin-top: 3rem;
+            color: #7f6a58;
+        }
+
+        .back-home {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">🍽️ Gusto & Co</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="index.html#contact">Бронь</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h1 style="text-align: center; margin: 2rem 0 0.5rem;">Наше меню</h1>
+        <p style="text-align: center; color: #5e4b38;">Сезонные блюда из свежих продуктов</p>
+
+        <!-- Категория 1: Закуски и салаты -->
+        <div class="menu-category">
+            <div class="category-head">
+                <h2 class="section-title">🥗 Закуски и салаты</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">🥑</div>
+                    <div class="card-content">
+                        <h3>Салат с креветкой и авокадо</h3>
+                        <p>Микс салата, тигровые креветки, авокадо, соус цитрус.</p>
+                        <div class="price">750 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🧀</div>
+                    <div class="card-content">
+                        <h3>Сырная тарелка</h3>
+                        <p>Три сорта французского сыра, виноград, орехи, мёд.</p>
+                        <div class="price">890 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🐟</div>
+                    <div class="card-content">
+                        <h3>Тартар из лосося</h3>
+                        <p>Слабосолёный лосось, авокадо, соус понзу, тобико.</p>
+                        <div class="price">990 ₽</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Категория 2: Горячие блюда -->
+        <div class="menu-category">
+            <div class="category-head">
+                <h2 class="section-title">🔥 Горячие блюда</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">🥩</div>
+                    <div class="card-content">
+                        <h3>Стейк рибай</h3>
+                        <p>Мраморная говядина, картофель гратен, соус демиглас.</p>
+                        <div class="price">1890 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🍝</div>
+                    <div class="card-content">
+                        <h3>Паста карбонара</h3>
+                        <p>Спагетти, гуанчиале, пармезан, яйцо, чёрный перец.</p>
+                        <div class="price">690 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🦆</div>
+                    <div class="card-content">
+                        <h3>Утиная грудка</h3>
+                        <p>Соус из вишни, пюре из батата, тимьян.</p>
+                        <div class="price">1350 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🍲</div>
+                    <div class="card-content">
+                        <h3>Том Ям (острый)</h3>
+                        <p>Кокосовое молоко, креветки, кальмары, грибы, том-ям паста.</p>
+                        <div class="price">890 ₽</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Категория 3: Десерты и напитки -->
+        <div class="menu-category">
+            <div class="category-head">
+                <h2 class="section-title">🍰 Десерты & напитки</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">🍫</div>
+                    <div class="card-content">
+                        <h3>Шоколадный фондан</h3>
+                        <p>С жидкой сердцевиной, ванильное мороженое.</p>
+                        <div class="price">520 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🍋</div>
+                    <div class="card-content">
+                        <h3>Лимонный тарт</h3>
+                        <p>Песочное тесто, лимонный курд, безе.</p>
+                        <div class="price">450 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🍷</div>
+                    <div class="card-content">
+                        <h3>Домашнее вино</h3>
+                        <p>Красное / белое / розе (бокал).</p>
+                        <div class="price">390 ₽</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">☕</div>
+                    <div class="card-content">
+                        <h3>Авторский кофе</h3>
+                        <p>Латте, капучино, раф с корицей.</p>
+                        <div class="price">280 ₽</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html" class="btn" style="background:#c26e2e; color:white; padding:0.7rem 2rem; border-radius:40px; text-decoration:none;">← Вернуться на главную</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Gusto & Co — меню может изменяться в зависимости от сезона.</p>
+    </div>
+</footer>
+
+<style>
+    .btn {
+        display: inline-block;
+        background: #c26e2e;
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s;
+    }
+    .btn:hover {
+        background: #a4581d;
+        transform: scale(1.02);
+    }
+</style>
+</body>
+</html>
