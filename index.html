@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Уютный ресторан | Вкус и атмосфера</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #2c241a;
+            background-color: #fefaf5;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        .header {
+            background: #fffaf5;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(8px);
+            background: rgba(255,250,245,0.9);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #c26e2e, #a0522d);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3b2c21;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #c26e2e;
+        }
+
+        /* Секция Hero */
+        .hero {
+            background: linear-gradient(120deg, #fceae6, #fff2e9);
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #3b2c21;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #5e4b38;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #c26e2e;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #a4581d;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(194,110,46,0.2);
+        }
+
+        /* Карточки меню */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: #3b2c21;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            flex: 1 1 280px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            background-color: #e9dfd3;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            color: #c26e2e;
+            font-weight: 700;
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Контактная форма */
+        .contact {
+            background: #fff3ea;
+            border-radius: 40px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #e2d4c8;
+            border-radius: 28px;
+            font-family: inherit;
+            background: white;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        /* Футер */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #eee3d8;
+            margin-top: 2rem;
+            color: #7f6a58;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">🍽️ Gusto & Co</div>
+            <ul class="nav-links">
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#contact">Бронь</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>Вкус, который остаётся с вами</h1>
+            <p>Авторская кухня, уютный зал и живая музыка по пятницам. Идеальное место для семейного ужина или романтического вечера.</p>
+            <a href="#contact" class="btn">Забронировать столик</a>
+        </div>
+    </section>
+
+    <div class="container" id="about">
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin: 2rem 0;">
+            <div style="flex: 1;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">О ресторане</h2>
+                <p style="font-size: 1.1rem; color: #4a3b2e;">Мы открылись в 2024 году, чтобы подарить гостям настоящую гастрономическую радость. Все блюда готовятся из фермерских продуктов, а за атмосферой следит команда профессионалов. У нас есть веранда, детский уголок и собственный винный погреб.</p>
+                <p style="margin-top: 1rem;">📍 Москва, ул. Едокая, 12<br>⏰ Ежедневно: 12:00 – 23:00</p>
+            </div>
+            <div style="flex: 1; background: #e6d9ce; border-radius: 32px; min-height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🍷</div>
+        </div>
+    </div>
+
+    <div class="container" id="menu">
+        <h2 class="section-title">🍜 Попробуйте наши хиты</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-img">🍲</div>
+                <div class="card-content">
+                    <h3>Том Ям с креветками</h3>
+                    <p>Острый суп на кокосовом молоке, тайские травы, креветки и грибы.</p>
+                    <div class="price">890 ₽</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🥩</div>
+                <div class="card-content">
+                    <h3>Мраморный рибай</h3>
+                    <p>Говядина премиум-класса, соус демиглас, запеченные овощи.</p>
+                    <div class="price">1790 ₽</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🍰</div>
+                <div class="card-content">
+                    <h3>Трюфельный десерт</h3>
+                    <p>Шоколадный фондан с трюфельным кремом и мороженым.</p>
+                    <div class="price">520 ₽</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="contact">
+        <div class="contact">
+            <h2 class="section-title" style="margin-top: 0;">📞 Забронировать стол</h2>
+            <form id="demoForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Алексей" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 999 123-45-67" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Количество гостей</label>
+                    <input type="number" id="guests" name="guests" min="1" max="12" value="2">
+                </div>
+                <div class="form-group">
+                    <label for="date">Дата и время</label>
+                    <input type="datetime-local" id="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Пожелания</label>
+                    <textarea id="comment" placeholder="Детское кресло, аллергия на орехи..."></textarea>
+                </div>
+                <button type="submit" class="btn" id="submitBtn">Отправить бронь</button>
+                <div id="formStatus" class="form-message"></div>
+            </form>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #a07e62;">*Это демо-форма. В реальном проекте подключите Formspree, Google Forms или любой другой сервис для приёма заявок.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Gusto & Co — ваш ресторан домашнего уюта. Сделано с ❤️ для GitHub Pages</p>
+    </div>
+</footer>
+
+<script>
+    // Простой обработчик формы без отправки на сервер (учебный пример)
+    const form = document.getElementById('demoForm');
+    const statusDiv = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // не перезагружаем страницу
+        
+        // Простейшая "имитация отправки"
+        statusDiv.style.color = '#2b6e3c';
+        statusDiv.innerHTML = '✅ Спасибо! Наш администратор свяжется с вами для подтверждения брони.';
+        
+        // Очистить форму опционально
+        // form.reset();
+        
+        // Можно также добавить скрытие сообщения через 5 секунд
+        setTimeout(() => {
+            statusDiv.innerHTML = '';
+        }, 5000);
+    });
+</script>
+</body>
+</html>
